@@ -4,7 +4,6 @@
 	{
 		background: #f0efef;
 		font-family: 'Arial', sans-serif;
-		font-weight: 400;
 		color: #000000;
 		font-size: 12pt;
 	}
@@ -26,7 +25,7 @@
 		font-size: 30px;
 	}
 
-	h2.major
+	h2.section
 	{
 		position: relative;
 		border-top: solid 5px #f0efef;
@@ -153,7 +152,7 @@
 		background: #fff;
 		border-top: solid 5px #b1ddab;
 		border-bottom: solid 5px #c1cac5;
-		padding: 6em 0 6em 0;
+		padding: 1em 0 6em 0;
 	}
 
 	.buffer

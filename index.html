@@ -8,21 +8,27 @@
 	<body>
 
 	<header id="header">
-		<div>
-			<div>
-				<h1>Computer Science Honours</h1>
-				<h2>Visualisation and Visual Thinking 2015</h2>
-			</div>
-			<div>
-				<p>by Darryl Meyer, Montlamedi Maikano and Lubabalo Nazo</p>
-			</div>
-		</div>
+		<table>
+			<tr>
+				<td>
+					<img src="images/carbon-footprint-left.png">
+				</td>
+				<td>
+					<h1>Computer Science Honours</h1>
+					<h2>Visualisation and Visual Thinking 2015</h2>
+					<p>by Darryl Meyer, Montlamedi Maikano and Lubabalo Nazo</p>
+				</td>
+				<td>
+					<img src="images/carbon-footprint-right.png">
+				</td>
+			</tr>
+		</table>
 	</header>
 
 	<nav id="nav">
 		<ul>
 			<li><a href="#introduction">Introduction</a></li>
-			<li><a href="#relatedwork">Related Work</a></li>
+			<li><a href="#literaturereview">Literature Review</a></li>
 			<li><a href="#visualqueries">Visual Queries</a></li>
 			<li><a href="#designdescription">Design Description</a></li>
 			<li><a href="#strengthsandweaknesses">Strengths and Weaknesses</a></li>
@@ -34,51 +40,112 @@
 	<div id="main" class="container">
 		<section class="box section">
 			<div id="introduction" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>Introduction</span></h2>
+			<h2 class="section"><span>Introduction</span></h2>
 			<div>
-				<h3>A Subheading</h3>
 				<p>
-					Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-					lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+					The University of Cape Town (UCT) is set on creating an environment which encourages sustainability and is committed to policies and practices that will ensure a contribution towards the bigger picture. UCT signed the Talloires Declaration in 1990 and with that began implementing energy saving policies and using resources to achieve these goals (University of Cape Town, 2014). Such policies inspired students to form the Green Campus Initiative in an effort to be involved in conserving the campus environment.
+				</p>
+				<p>
+					The most recent international commitment UCT has made is with the Sustainable Campus Charter (ISCN, 2010). This charter provides cooperating institutions with the opportunity of integrating research and sustainable operations to determine the best practices and apply them, while allowing independent goals to be created that are in line with the Charter. Not only does this motivate collaborative work, but also transparency among the institutions.
+				</p>
+				<p>
+					The Carbon Footprint report focuses on greenhouse gas emissions that are caused by activities (directly or indirectly) and by a product or service over time. Using the global standard Greenhouse Gas (GHG) Protocol for measuring, managing and reporting greenhouse gas emissions (Ghgprotocol.org, 2015). Emissions are expressed in carbon dioxide equivalents (CO2e) and categorised into three scopes, namely:
+					<ul>
+						<li>
+							Scope 1 - Direct emissions
+						</li>
+						<li>
+							Scope 2 - Indirect emissions from purchased electricity, heat or steam
+						</li>
+						<li>
+							Scope 3 - Other indirect emissions
+						</li>
+					</ul>
+				</p>
+				<p>
+					Currently, the visualizations often used to represent the findings are pie and bar charts. The pie charts are used to show proportionalities, where each sector of the pie represents a categories from the three scopes. The issue with this is that the data contains many small amounts, which makes it unsuitable for viewing. The bar charts are great for comparisons (current vs. previous year) but fails to effectively represent data that has discrepancies.
+				</p>
+				<p>
+					The data for this report is retrieved primarily from the Procurement and Payment Services (PPS), with the remaining data from Student Housing and a small number from the different satellite campuses. This is compiled and presented for the ERC, UCT management, PPS, the International Sustainable Campus Network (ISCN) and various UCT staff departments.
 				</p>
 			</div>
 		</section>
 		<section class="box section">
-			<div id="relatedwork" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>Related Work</span></h2>
+			<div id="literaturereview" class="buffer">&nbsp;</div>
+			<h2 class="section"><span>Literature Review</span></h2>
 			<div>
-				<h3>A Subheading</h3>
 				<p>
-					Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-					lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+					Many universities around the world are dedicated towards lowering their carbon emissions. With this goal, it is important that data is collected accurately and displayed correctly in order to determine areas of concern and possible change. With the intention of improving the current state of carbon emission visualizations, we sought out a few institution’s carbon footprints online to see how the data is displayed and how effective it is. The following institutions all use the Greenhouse Gas Protocol when measuring their carbon footprint, thus the current visualizations that they use are worth noting:
+				</p>
+
+				<h3>The American University in Cairo (AUC)</h3>
+				<img src="images/amer-uni-cairo-bar-graph.png" height="50%" width="50%">
+				<p>
+					The graph shows the AUC’s total carbon dioxide equivalent emissions, where the x-axis shows the different categories (in percentages) and the y-axis shows the amount of emissions (in Metric Tons of Carbon Dioxide Equivalent). Comparisons can be made just by looking at the visualization plainly, and the division of each category allows one to see the activities involved and their contribution. Percentages are also added to the divisions which help with queries pertaining to amounts. One issue is that each category can easily become busy if it has many activities involved in it. The second is that there is a discrepancy between the figures, which makes Paper Use, Water Supply and Other seem almost meaningless. Another issue is that all the text and percentages makes the visualization overwhelming. A positive that can be taken away from this visualization is the stacking of individual categories into similar groups.
+				</p>
+
+				<h3>The University of Maryland</h3>
+				<img src="images/uni-mary-pie-chart.png" height="50%" width="50%">
+				<p>
+					The pie chart gives a breakdown of the total emissions incurred by the University of Maryland. For the activities that contribute less than 10%, the proportionalities are no longer useful; the slices become very thin, making it hard to picture the estimation and possibly writing it off as minor or unnecessary. For example it is not possible to tell the difference between faculty/staff commuting and student commuting pie chart slices. The fact that the pie is 3D does not help to perform visual queries and is not necessary.
+				</p>
+
+				<h3>Washington University in St. Louis</h3>
+				<img src="images/uni-wash-pie-chart.png" height="50%" width="50%">
+				<p>
+					The Washington University in St. Louis’ pie chart is similar to the University of Maryland, but the slices are arranged according to scopes and it is a 2D perspective. The annotations on the side are somewhat misleading, the keys for the scopes have no relation (or colour) to the pie chart itself and the amount of text makes the visualization quite busy. The colours differentiate well, but there is no fixed key to which they refer to. “Other Scope 1*, 0.2%” is almost non-existent and the lines which refer to slices are hard to see. This is another good example of a pie chart that is difficult to interpret.
+				</p>
+
+				<h3>The University of Cape Town (UCT)</h3>
+				<img src="images/uct-pie-chart-2012.png" height="40%" width="40%">
+				<img src="images/uct-pie-chart-2013.png" height="40%" width="40%">
+				<p>
+					The two pie charts above are taken from the 2012 and 2013 UCT’s Carbon Footprint reports.
+				</p>
+				<p>
+					The pie chart representing the data from 2012 has a number of issues. The title of each activity is not placed consistently; some titles reside inside the pie while others have lines directing the viewer to the relevant slice. Most of the activities have percentages that are less than 1%, which makes that data hard to differentiate. A number of activity’s have a 0% contribution, which is not an entirely correct representation of the raw data, making it misleading.
+				</p>
+				<p>
+					The pie chart from the 2013 year is a 3D pie chart. Again, this interferes with the proportionalities of the pie chart, where a 2D one would have sufficed. Again, many of the activities have percentages below 1%, which makes it difficult to read and interpret them. It is also useful to indicate which activities fall under scope one, two and three respectively for easier querying.
 				</p>
 			</div>
 		</section>
 		<section class="box section">
 			<div id="visualqueries" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>Visual Queries</span></h2>
+			<h2 class="section"><span>Visual Queries</span></h2>
 			<div>
-				<h3>A Subheading</h3>
 				<p>
-					Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-					lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+					With the design we are proposing in order to represent data, these are our primary visual queries:
+				</p>
+				<strong><i>Which scope contributed the most to the total emissions?</i></strong>
+				<p>
+					The first query that is asked when viewing an institution’s total emissions is which scope had the largest impact. This allows the interested parties to immediately recognise which activities are a cause for concern and how they can be adjusted to produce less emissions
 				</p>
 			</div>
 		</section>
 		<section class="box section">
 			<div id="designdescription" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>Design Description</span></h2>
+			<h2 class="section"><span>Design Description</span></h2>
 			<div>
-				<h3>A Subheading</h3>
+				<h3>Initial proposed design</h3>
 				<p>
-					Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-					lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+					Once the key visual queries were decided on, we proceeded onto designing the visualization. Figure 1 shows the initial design, followed by the rationale behind it:
+				</p>
+				<img src="images/first-drawing.png" height="70%" width="70%">
+				<p>
+					The inspiration behind this design is taken from the “Mandela’s Descendants” visualization presented in class. Three shades of green are used, where: (1) the darkest green colour shows the context of the kind of information we are dealing with, which in this case is UCT’s carbon footprint, (2) the “normal” green shows the three scopes dealt with in the report and (3) the lighter shade of green shows the different categories. Icons are used to depict the different categories, because the icons quick, easy recognition and text is included to avoid any misinterpretations of the icons.
+				</p>
+				<p>
+					Relationships are shown using edges: the thickness of an edge gives a comparative estimation of how much each category contributed to each scope, and likewise how much each scope contributed to the total emissions, which makes it easy to answer certain visual queries. The size of each category allows for comparisons to be made along any other category. This is depicted by the height of a category’s box; although this is not a direct translation of the actual figures, it is meant to provide an estimation for comparative purposes.
+				</p>
+				<p>
+					Details are available on demand for each category, where a click on the box of a category brings up a bar chart that shows the emissions from current year vs. the emissions from the previous year.
 				</p>
 			</div>
 		</section>
 		<section class="box section">
 			<div id="strengthsandweaknesses" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>Strengths and Weaknesses</span></h2>
+			<h2 class="section"><span>Strengths and Weaknesses</span></h2>
 			<div>
 				<h3>A Subheading</h3>
 				<p>
@@ -89,7 +156,7 @@
 		</section>
 		<section class="box section">
 			<div id="conclusions" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>Conclusions</span></h2>
+			<h2 class="section"><span>Conclusions</span></h2>
 			<div>
 				<h3>A Subheading</h3>
 				<p>
@@ -100,7 +167,7 @@
 		</section>
 		<section class="box section">
 			<div id="references" class="buffer">&nbsp;</div>
-			<h2 class="major"><span>References</span></h2>
+			<h2 class="section"><span>References</span></h2>
 			<div>
 				<h3>A Subheading</h3>
 				<p>
