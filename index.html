@@ -6,6 +6,26 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
+		<script src="jquery.min.js"></script>
+	<script>
+		/* The below code is from a tutorial on smooth scrolling using JavaScript. Please see http://www.learningjquery.com/2007/10/improved-animated-scrolling-script-for-same-page-links
+		*/
+
+		$(function() {
+		  $('a[href*=#]:not([href=#])').click(function() {
+		    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		      var target = $(this.hash);
+		      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		      if (target.length) {
+		        $('html,body').animate({
+		          scrollTop: target.offset().top
+		        }, 1000);
+		        return false;
+		      }
+		    }
+		  });
+		});
+	</script>
 
 	<header id="header">
 		<table>
@@ -79,26 +99,52 @@
 				</p>
 
 				<h3>The American University in Cairo (AUC)</h3>
-				<img src="images/amer-uni-cairo-bar-graph.png" height="50%" width="50%">
+				<figure>
+					<img src="images/amer-uni-cairo-bar-graph.png" height="60%" width="60%">
+					<figcaption>
+						Figure 1. - American University in Cairo carbon emissions data of 2011.
+					</figcaption>
+				</figure>
 				<p>
 					The graph shows the AUC’s total carbon dioxide equivalent emissions, where the x-axis shows the different categories (in percentages) and the y-axis shows the amount of emissions (in Metric Tons of Carbon Dioxide Equivalent). Comparisons can be made just by looking at the visualization plainly, and the division of each category allows one to see the activities involved and their contribution. Percentages are also added to the divisions which help with queries pertaining to amounts. One issue is that each category can easily become busy if it has many activities involved in it. The second is that there is a discrepancy between the figures, which makes Paper Use, Water Supply and Other seem somewhat meaningless. Another issue is that all the text and percentage amounts make the visualization overwhelming. A positive that can be taken away from this visualization is the stacking of individual categories into similar groups.
 				</p>
 
 				<h3>The University of Maryland</h3>
-				<img src="images/uni-mary-pie-chart.png" height="50%" width="50%">
+				<figure>
+					<img src="images/uni-mary-pie-chart.png" height="60%" width="60%">
+					<figcaption>
+						Figure 2. - University of Maryland carbon emissions data for 2010.
+					</figcaption>
+				</figure>
 				<p>
 					The pie chart gives a breakdown of the total emissions incurred by the University of Maryland. For the activities that contribute less than 10%, the proportionalities are no longer useful; the slices become very thin, making it hard to picture the estimation and possibly writing it off as minor. For example, it is not possible to tell the difference between the faculty/staff commuting and student commuting pie chart slices. The fact that the pie chart is 3D does not help in answering other possible queries.
 				</p>
 
 				<h3>Washington University in St. Louis</h3>
-				<img src="images/uni-wash-pie-chart.png" height="50%" width="50%">
+				<figure>
+					<img src="images/uni-wash-pie-chart.png" height="60%" width="60%">
+					<figcaption>
+						Figure 3. - Washington University carbon emissions data for 2009
+					</figcaption>
+				</figure>
 				<p>
 					The Washington University in St. Louis’ pie chart is similar to the University of Maryland, but the slices are arranged according to scopes and it is a 2D perspective. The annotations on the side are somewhat misleading, the keys for the scopes have no relation (or colour) to the pie chart itself and the amount of text makes the visualization quite busy. The colours differentiate well, but there is no fixed key to which they refer to. “Other Scope 1*, 0.2%” is almost non-existent and the lines which refer to slices are hard to see. This is another good example of a pie chart that is difficult to interpret.
 				</p>
 
 				<h3>The University of Cape Town (UCT)</h3>
-				<img src="images/uct-pie-chart-2012.png" height="40%" width="40%">
-				<img src="images/uct-pie-chart-2013.png" height="40%" width="40%">
+				<figure>
+					<img src="images/uct-pie-chart-2012.png" height="50%" width="50%">
+					<figcaption>
+						Figure 4. - University of Cape Town carbon emissions data for 2012.
+					</figcaption>
+				</figure>
+
+				<figure>
+					<img src="images/uct-pie-chart-2013.png" height="50%" width="50%">
+					<figcaption>
+						Figure 5. - University of Cape Town carbon emissions data for 2013.
+					</figcaption>
+				</figure>
 				<p>
 					The two pie charts above are taken from the 2012 and 2013 UCT’s Carbon Footprint reports.
 				</p>
@@ -145,9 +191,14 @@
 			<div>
 				<h3>Initial proposed design</h3>
 				<p>
-					Once the primary visual queries were decided on, we proceeded onto designing the visualization. Figure 1 shows the initial design, followed by the rationale behind it:
+					Once the primary visual queries were decided on, we proceeded onto designing the visualization. Figure 6 shows the initial design, followed by the rationale behind it:
 				</p>
-				<img src="images/first-drawing.png" height="70%" width="70%">
+				<figure>
+					<img src="images/first-drawing.png" height="90%" width="90%">
+					<figcaption>
+						Figure 6. - Initial proposed design.
+					</figcaption>
+				</figure>
 				<p>
 					The inspiration behind this design is taken from the “Mandela’s Descendants” visualization presented in class. Three shades of green are used, where: (1) the darkest green colour shows the context of the kind of information we are dealing with, which in this case is UCT’s carbon footprint, (2) the “regular” green shows the three scopes dealt with in the report and (3) the lighter shade of green shows the different categories. Icons are used to depict the different categories (for their quick, easy recognition) and text is included to avoid any possible misinterpretations of the icons.
 				</p>
@@ -170,7 +221,96 @@
 				<p>
 					A tree like model was used in such a manner that branches were used to indicate the weighting of the scopes and categories. The branches were also used to indicate relationships. An example is the thickest branch linking to scope 2 meaning that scope is a part of the Carbon footprint (relationship) and that it contributes the most (thickness) . The challenge with this approach  is that the more scopes and categories are added thickness may become an issue to differentiate although relationships can be easily seen for any number of categories and scopes.
 				</p>
+				<h3>Feedback concerning the initial proposed design</h3>
+				<p>
+					Once the initial design was presented to the class, these are the comments that we received:
+				</p>
+				<ol>
+					<li>
+						Colours could be used to either differentiate the three scopes or differentiate the categories (along with highlighting severity)
+					</li>
+					<li>
+						Category labels should be placed on a single line for easy readability (avoid constant up-and-down movement while reading)
+					</li>
+					<li>
+						Instead of using lines to group the three scopes, cluster the categories according to each scope to show grouping
+					</li>
+					<li>
+						Adding numbers and possibly a scale is necessary (to avoid size estimation of data)
+					</li>
+					<li>
+						No need for lines/thickness of lines for differentiation (idea of grouping)
+					</li>
+					<li>
+						Visualization running downwards is almost counter-intuitive; look into making it upright (or possibly horizontal)
+					</li>
+					<li>
+						Add a timeline slide at the bottom to scroll between years, and ensure data dynamically adjusts
+					</li>
+				</ol>
+				<p>
+					The feedback received was useful and considered in making the final proposed design. This can be seen in Figure 2 followed by the rationale behind it as well as the feedback that was put into effect.
+				</p>
+				<h3>Response to above mentioned feedback</h3>
+				<p>
+					After careful consideration of the useful insight the class gave us, we decided on the following to implement into our final design:
+				</p>
+				<ol>
+					<li>
+						Colours are used to differentiate the three scopes; this easily highlights the different scopes and blue, green and orange contrast each other nicely. This is taken further to account for both 2012 and 2013, where this distinction is made using shading with texture
+					</li>
+					<li>
+						The labels for each category is placed on a neat, single line and the icons follow under each one respectively. This creates one line, sight of reading to avoid a constant up-and-down motion while reading
+					</li>
+					<li>
+						The categories are grouped according to each scope, and this is shown by having categories clustered together
+					<li>
+						A traditional bar chart is used; a scale is present and each category its total value placed on it to represent the raw data
+					</li>
+					<li>
+						Lines and thickness of lines were removed completely
+					</li>
+					<li>
+						This notion was removed, so the bars are now standing upright
+					</li>
+					<li>
+						A timeline slide has not been added here; the data visualized is only for two years. So the idea is to add a timeline slide as more Carbon Footprint reports are produced by the university
+					</li>
+					<li>
+						The idea of a dashboard suggested is great, which would give an overview of the entire data set that is being viewed. However, it was not added to the final design due to restrictions of the JavaScript library used. Although, it is a design element that is recommended for future work
+					</li>
+				</ol>
 				<h3>Final design</h3>
+				<figure>
+					<img src="images/category-graph.png" height="90%" width="90%">
+					<figcaption>
+						Figure 7. - Graph displaying the different categories of carbon emissions.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/scope-graph.png" height="70%" width="70%">
+					<figcaption>
+						Figure 8. - Graph displaying the different scopes of carbon emissions.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/electricity.png" height="70%" width="70%">
+					<figcaption>
+						Figure 9. - Graph displaying the electricity category.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/vehicle-fleet.png" height="70%" width="70%">
+					<figcaption>
+						Figure 10. - Graph displaying the vehicle fleet category.
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="images/waste.png" height="70%" width="70%">
+					<figcaption>
+						Figure 11. - Graph displaying the waste category.
+					</figcaption>
+				</figure>
 				<h4>Implementation</h4>
 				<p>
 					The final design was implemented in a HTML webpage using JavaScript and CSS. The JavaScript libraries D3.js and C3.js were used to generate the bar graphs and CSS was used to customize the web page layout and graph properties. C3.js is a D3.js based library that allows the creation of reusable graphs.
@@ -212,7 +352,7 @@
 					The are only two years’ data available currently. The use of buttons instead of making use of a timeline to navigate along the years means that as amount of data starts to increase over successive years this can make the design cluttered and less appealing to view as a button will have to be added for each year.
 				</p>
 				<p>
-					A seen in Figure 1, electricity carbon emissions contribute 64,888 (tons CO2-eq) on the year 2013 compared to Waste carbon emissions contributed an insignificant amount of 114 (tons CO2-eq). Therefore, depending on the amount recorded on each category, it may be possible to have oppositely extreme values i.e. huge recordings compared to relatively small recordings. This makes smaller recordings on the bar graph harder to observe.
+					A seen in Figure 7, electricity carbon emissions contribute 64,888 (tons CO2-eq) on the year 2013 compared to Waste carbon emissions contributed an insignificant amount of 114 (tons CO2-eq). Therefore, depending on the amount recorded on each category, it may be possible to have oppositely extreme values i.e. huge recordings compared to relatively small recordings. This makes smaller recordings on the bar graph harder to observe.
 				</p>
 			</div>
 		</section>
@@ -251,11 +391,50 @@
 			<div id="references" class="buffer">&nbsp;</div>
 			<h2 class="section"><span>References</span></h2>
 			<div>
-				<h3>A Subheading</h3>
-				<p>
-					Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-					lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-				</p>
+				<ol>
+					<li>
+						The American University in Cairo. (2012), Our Carbon Footprint<br>
+						[Online] Available from:<br>
+						<a href="http://www.aucegypt.edu/Sustainability/Rise/Documents/FootprintFY11Final.pdf">http://www.aucegypt.edu/Sustainability/Rise/Documents/FootprintFY11Final.pdf</a><br>
+						[Accessed: 02 March 2015]
+					</li>
+					<li>
+						The University of Maryland. (2010), Carbon Footprint of the University of Maryland: Greenhouse Gas Inventory 2010<br>
+						[Online] Available from:<br>
+						<a href="http://sustainability.umd.edu/documents/Reports/2010_UMD_GHGinventory_final.pdf">http://sustainability.umd.edu/documents/Reports/2010_UMD_GHGinventory_final.pdf</a><br>
+						[Accessed: 02 March 2015]
+					</li>
+					<li>
+						Washington University in St. Louis. (2009), Greenhouse Gas Emissions Inventory<br>
+						[Online] Available from:<br>
+						<a href="https://sustainability.wustl.edu/wp-content/uploads/2013/01/GHGEmissions.pdf">https://sustainability.wustl.edu/wp-content/uploads/2013/01/GHGEmissions.pdf</a><br>
+						[Accessed: 02 March 2015]
+					</li>
+					<li>
+						The University of Cape Town. (2013), The University of Cape Town Carbon Footprint Report 2012<br>
+						[Online] Available from:<br>
+						<a href="https://www.uct.ac.za/usr/about/greencampus/UCT_Carbon_Footprint_Report2012.pdf">https://www.uct.ac.za/usr/about/greencampus/UCT_Carbon_Footprint_Report2012.pdf</a><br>
+						[Accessed: 24 February 2015]
+					</li>
+					<li>
+						The University of Cape Town. (2014), The University of Cape Town Carbon Footprint Report 2013<br>
+						[Online] Available from:<br>
+						<a href="http://www.uct.ac.za/usr/propserv/UCT_Carbon_Footprint_Report_2013.pdf">http://www.uct.ac.za/usr/propserv/UCT_Carbon_Footprint_Report_2013.pdf</a><br>
+						[Accessed: 24 February 2015]
+					</li>
+					<li>
+						Ghgprotocol.org, (2015). About the GHG Protocol | Greenhouse Gas Protocol.<br>
+						[Online] Available from:<br>
+						<a href="http://www.ghgprotocol.org/about-ghgp">http://www.ghgprotocol.org/about-ghgp</a><br>
+						[Accessed: 25 February 2015]
+					</li>
+					<li>
+						ISCN.org, (2015). Implementation Guidelines to the ISCN-GULF Sustainable Campus Charter.<br>
+						[Online] Available from:<br>
+						<a href="www.international-sustainable-campus-network.org/download-document/365-implementation-guidelines-for-the-iscn-gulf-sustainable-campus-charter.html">www.international-sustainable-campus-network.org/download-document/365-implementation-guidelines-for-the-iscn-gulf-sustainable-campus-charter.html</a><br>
+						[Accessed: 13 March 2015]
+					</li>
+				</ol>
 			</div>
 		</section>
 	</div>

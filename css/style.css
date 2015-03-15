@@ -5,7 +5,10 @@
 		background: #f0efef;
 		font-family: 'Arial', sans-serif;
 		color: #000000;
-		font-size: 12pt;
+		font-size: 13pt;
+		width: 1200px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 
 	h1, h2, h3
@@ -49,12 +52,12 @@
 			text-decoration: underline;
 		}
 
-	p, ul, ol, table
+	p, ul, ol, table, li
 	{
 		margin-bottom: 1em;
 	}
 
-	section, article
+	section, article, figure
 	{
 		margin-bottom: 2em;
 	}
